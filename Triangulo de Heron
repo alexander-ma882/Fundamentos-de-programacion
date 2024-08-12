@@ -1,0 +1,22 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+        //Declarar variables
+        float r,a,b,c,s;//r(area el triángulo),a(primer lado),b(segundo lado),c(tercer lado),s(semperimetro del triangulo)
+        //Pedir ingresar datos
+        cout<<"Ingresar el primer lado del triángulo: ";
+        cin>>a;
+        cout<<"Ingresar el segundo lado del triángulo: ";
+        cin>>b;
+        cout<<"Ingresar el tercer lado del triángulo: ";
+        cin>>c;
+        //Operaciones auxiliares
+        s=(a+b+c)/2;//Semiperimétro del triángulo
+        //proceso principal
+        r=sqrt(s*(s-a)*(s-b)*(s-c));
+        //Salida
+        cout<<"El área del triángulo es: "<<r;
+        return 0;
+}
