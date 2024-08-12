@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    
+    //Declarar variables
+    float a,b,h,A;
+    //Entrada
+    cout<<"Ingresar la base mayor:";
+    cin>>a;
+    cout<<"Ingresar la base menor:";
+    cin>>b;
+    cout<<"Ingresar la altura:";
+    cin>>h;
+    A=((a+b)/2)*h;
+    cout<<"El area es:"<<A;
+    return 0;
+
+}
