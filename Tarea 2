@@ -1,0 +1,21 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+    double radio, perimetro, area;
+    cout<<"Ingrese el radio de la circunferencia:";
+    cin>>radio;
+    if (radio<=0) {
+        cout<<"El radio debe ser un numero positivo";
+        return 1;
+    }
+    perimetro = 2 * M_PI * radio;
+    area = M_PI * pow(radio, 2);
+    cout<<"El perimetro de la circunferencia es: " <<perimetro<< endl;
+    cout<<"El area de la circunferencia es: " <<area<< endl;
+    
+    
+}
