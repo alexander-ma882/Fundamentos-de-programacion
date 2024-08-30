@@ -1,0 +1,37 @@
+#include <iostream>
+#include <math.h>
+#include <complex>
+using namespace std;
+
+int main()
+{
+    float a, b, c, D, x1, x2;
+    cout<<"Ingresar el valor de la variable A: ";
+    cin>>a;
+    cout<<"Ingresar el valor de la variable B: ";
+    cin>>b;
+    cout<<"Ingresar el valor de la variable C: ";
+    cin>>c;
+    D=(pow (b,2))-4*a*c;
+    if (D>0) {
+        x1=(-b+(sqrt(D)))/2*a;
+        x2=(-b-(sqrt(D)))/2*a;
+        cout<<"La primera solucion es: "<<x1;
+        cout<<"La segunda variabe es: "<<x2;
+        
+    }
+    else if (D==0) {
+        x1=(-b+(sqrt(D)))/2*a;
+        cout<<"La primera solucion es: "<<x1;
+        cout<<"La segunda variabe es: "<<x1;
+        
+    }
+    else if (D<0) {
+        x1=(-b+(sqrt(D*(-1))))/2*a;
+        x2=(-b-(sqrt(D*(-1))))/2*a;
+        cout<<"La primera solucion es: "<<x1;
+        cout<<"La segunda variabe es: "<<x2<<"i";
+        
+    }
+    
+}
