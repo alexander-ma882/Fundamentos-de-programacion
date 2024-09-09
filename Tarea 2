@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    
+    float x,y;
+    cout<<"Ingrese el punto talque(x y): ";
+    cin>>x>>y;
+    
+    if(x>0 && y>0)
+        cout<<"El punto esta en el primer cuadrante"<<endl;
+        
+    
+    else{
+        if(x<0 && y>0)
+            cout<<"El punto esta en el segundo cuadrante"<<endl;
+        
+        else
+            cout<<"El punto esta en el 4to cuadrante"<<endl;
+    }
+    
+    
+    return 0;
+    
+}
