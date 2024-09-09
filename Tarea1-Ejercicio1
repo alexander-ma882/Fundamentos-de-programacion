@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+ int Entero1,Entero2,EnteroNuevo1,Enteronuevo2;
+ cout<<"Ingrese el primer entero: ";
+ cin>>Entero1;
+ cout<<"Ingrese el segundo entero: ";
+ cin>>Entero2;
+ EnteroNuevo1=Entero2;
+ Enteronuevo2=Entero1;
+ cout<<"El nuevo primer entero es: "<<EnteroNuevo1<<endl;
+ cout<<"El nuevo segundo entero es: "<<Enteronuevo2<<endl;
+    return 0;
+}
