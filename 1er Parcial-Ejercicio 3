@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int main (){
+    float totalhoras=0, horastrabajadas; 
+    while(horastrabajadas>=0 ){
+        do {
+            cout<<"Ingrese sus horas trabajadas: ";
+            cin>>horastrabajadas;
+            
+        } while(horastrabajadas<0 && horastrabajadas!=-1);
+        
+        if(horastrabajadas>-1 ){
+        totalhoras=totalhoras+horastrabajadas;
+            
+        }
+        else if(horastrabajadas==-1)
+            cout<<"Conteo finalizado"<<endl;
+        
+    }
+    cout<<"El total de horas trabajadas es: "<<totalhoras;
+
+    return 0;
+}
