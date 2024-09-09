@@ -1,0 +1,15 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std; 
+int main()
+{
+    float x1,x2,y1,y2,Distancia;
+    cout<<"Ingrese el primer punto, tal que (x1 y1): ";
+    cin>>x1>>y1;
+    cout<<"Ingrese el segundo punto, tal que (x2 y2): ";
+    cin>>x2>>y2;
+    Distancia=sqrt(pow((x2-x1),2)+pow((y2-y1),2));
+    cout<<"La Distancia es de: "<<Distancia<<" unidades";
+    return 0;
+}
