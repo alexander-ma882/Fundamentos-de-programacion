@@ -1,0 +1,89 @@
+Programa 1
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main()
+{
+    int x,n,suma=0;
+    cout<<"Ingrese un numero: ";
+    cin>>x;
+    cout<<"Ingrese el exponente: ";
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        suma=suma+pow(x,i);
+    }
+    cout<<"La suma es de: "<<suma;
+    return 0;
+}
+
+Programa 2
+#include <iostream>
+
+using namespace std;
+
+int main () {
+    float totv;
+    
+    cout<< "Ingrese la cantidad total de ventas realizadas este mes: "<<endl;
+    cin>> totv;
+    
+    if ((10000<totv) && (totv<50000)){
+        cout<< "Obtiene una comision es del 5%"<<endl;
+        totv=totv+(totv*0.05);
+        cout<< "El total a pagar, incluyendo la comision, es: "<<totv<<endl;
+    }
+    else 
+        if (totv>50000){
+            cout<< "Obtiene una comision es del 8%"<<endl;
+        totv=totv+(totv*0.08);
+        cout<< "El total a pagar, incluyendo la comision, es: "<<totv<<endl;
+        }
+        else 
+            cout<< "No hay comision, El total a pagar es: "<<totv<<endl;
+            
+
+    return 0;
+}
+
+Programa 3
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, suma = 0;
+
+    // Solicitar el número de máquinas
+    do {
+        cout << "Ingresa el total de maquinas: ";
+        cin >> n;
+        if (n < 1) {
+            cout << "Ingresa un numero valido" << endl;
+        }
+    } while (n < 1);
+
+    // Declaración del arreglo para las horas trabajadas
+    int h[n];
+
+    // Ingreso de horas trabajadas para cada máquina
+    for (int i = 0; i < n; i++) {
+        do {
+            cout << "Ingresa el numero de horas trabajadas de la maquina " << (i + 1) << ": ";
+            cin >> h[i];
+            if (h[i] < 0) {
+                cout << "Ingresa una cantidad de horas trabajadas valida" << endl;
+            }
+        } while (h[i] < 0);
+        suma += h[i]; // Sumar horas
+    }
+
+    cout << "El total de horas trabajadas por las maquinas es: " << suma << endl;
+
+    // Cálculo del porcentaje de horas trabajadas de cada máquina
+    for (int i = 0; i < n; i++) {
+        double porcentaje = (static_cast<double>(h[i]) / suma) * 100;
+        cout << "La maquina " << (i + 1) << " trabajó el " << porcentaje << "% del total de horas." << endl;
+    }
+
+    return 0;
+}
