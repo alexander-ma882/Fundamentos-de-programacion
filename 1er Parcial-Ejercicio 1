@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int personas,totalevento;
+
+    cout<<"Ingrese cuantas personas formaran parte del evento: ";
+    cin>>personas;
+
+    totalevento=50*personas;
+
+    cout<<"El costo total del evento es de : "<<totalevento<<" bs";
+
+    return 0;
+}
