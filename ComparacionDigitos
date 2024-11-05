@@ -1,0 +1,41 @@
+//Alexander Maldonado Alba
+#include <iostream>
+using namespace std;
+
+void comparacion(int n);
+
+
+int main() {
+	int num;
+	do {
+	cout << "Ingrese el numero a comparar: ";
+		cin >> num;
+	} while (num< 0);
+	comparacion(num);
+	return 0;
+}
+
+void comparacion(int n) {
+	int digito1, digito2,numinvertido=0,i,diferencia;
+	
+	i = n;
+	while (i>0) {
+		digito1 = i % 10;
+		numinvertido = (numinvertido * 10) + digito1;
+		i = i / 10;
+	}
+	i = n;
+	while (numinvertido > 0 && i > 0) {
+		digito1 = i % 10;
+		digito2 = numinvertido % 10;
+		if (digito1 != digito2) {
+			diferencia = digito1 - digito2;
+			diferencia = abs(diferencia);
+			cout << "La diferencia entre " << digito1 << " y " << digito2 << " es: " << diferencia << endl;
+		}
+		numinvertido=numinvertido/10;
+		i = i / 10;
+	}
+
+
+}
