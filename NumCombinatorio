@@ -1,0 +1,30 @@
+/Alexander Maldonado Alba
+#include <iostream>
+
+using namespace std; 
+
+int Factorial(int numero);
+
+int main() {
+	int r, n, c;
+	do {
+		cout << "Introdruzca el primer nro n para calcular el nro combinatorio: ";
+		cin >> n;
+	} while (n < 0); 
+	do {
+		cout << "Introdruzca el nro r para calcular el nro combinatorio: ";
+		cin >> r;
+	} while (r < 0); 
+	cout << "Se calculara el nro combinatorio de la siguiente manera: n!/r!(n-r)!"<<endl; 
+	c = Factorial(n) / (Factorial(r) * Factorial(n - r)); 
+	cout << "El nro combinatorio es: " <<c;
+	
+	return 0; 
+}
+int Factorial(int numero) {
+	int fact=1, i;
+	for (i = 1; i <= numero; i++) {
+		fact = i * fact; 
+	}
+	return fact; 
+}
