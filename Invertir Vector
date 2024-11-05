@@ -1,0 +1,42 @@
+//Alexander Maldonado Alba
+#include <iostream>
+#define MAX 10
+
+ using namespace std;
+
+ void cargar(int vec[], int n);
+ void mostrar(int vec[], int n);
+ void invertir(int vec[], int n);
+
+ int main(){
+    int vec1[MAX],n;
+    do{
+    cout<< "Ingrese el tamaño del vector: ";
+    cin >>n;
+    }while(n<0||n>MAX);
+    cargar(vec1,n);
+    invertir(vec1,n);
+    cout<< "El vector invertido es: "<<endl;
+    mostrar(vec1,n);
+   return 0;
+ }
+
+ void cargar(int vec[], int n){
+    for(int i=0;i<n;i++){
+        cout<< "V["<<i<<"]:";
+        cin>> vec[i];
+    }
+ }
+ void mostrar(int vec[], int n){
+ for(int i=0;i<n;i++){
+        cout<< "V["<<i<<"]:"<<vec[i]<<endl;
+    }
+ }
+ void invertir(int vec[], int n){
+     int aux[n];
+    for(int i=0;i<n/2;i++){
+        aux[i]=vec[i];
+        vec[i]=vec[n-i-1];
+        vec[n-i-1]=aux[i];
+    }
+ }
