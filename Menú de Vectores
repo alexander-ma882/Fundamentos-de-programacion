@@ -1,0 +1,126 @@
+//Alexander Maldonado Alba
+#include <iostream>
+#define MAX 100
+using namespace std;
+
+void cargar(int vec[], int n);
+void mostrar(int vec[], int n);
+void burbuja(int vec[], int n);
+int sumar(int vec[], int n);
+int mayor(int vec[], int n);
+int menor(int vec[], int n);
+void unir(int vec[], int n, int vec1[], int m, int vec2[], int &tam);
+float promedio(int vec[], int n);
+
+int main() {
+    int A[MAX], B[MAX], C[MAX], opcion, n, m, tam, aux, s;
+    do {
+        cout << "    MENU" << endl;
+        cout << "1. Cargar vector" << endl;
+        cout << "2. Mostrar vector" << endl;
+        cout << "3. Clasificar vector" << endl;
+        cout << "4. Mayor de un vector" << endl;
+        cout << "5. Menor de un vector" << endl;
+        cout << "6. Promedio de un vector" << endl;
+        cout << "7. Unir vectores" << endl;
+        cout << "8. Sumar vectores" << endl;
+        cout << "0. Salir" << endl;
+        cout << "Ingrese una opcion: ";
+        cin >> opcion;
+        switch (opcion) {
+            case 1:
+                do {
+                    cout << "Ingrese la cantidad de elementos: ";
+                    cin >> n;
+                } while (n < 0 || n > 100);
+                cargar(A, n);
+                break;
+            case 2:
+                mostrar(A, n);
+                break;
+            case 3:
+                burbuja(A, n);
+                break;
+            case 4:
+                burbuja(A, n);
+                cout << "El mayor es: " << A[n - 1] << endl;
+                break;
+            case 5:
+                burbuja(A, n);
+                cout << "El menor es: " << A[0] << endl;
+                break;
+            case 6:
+                cout << "El promedio del vector es: " << promedio(A, n) << endl;
+                break;
+            case 7:
+                cout << "Ingrese la cantidad de elementos para el segundo vector: ";
+                cin >> m;
+                cargar(B, m);
+                unir(A, n, B, m, C, tam);
+                mostrar(C, tam);
+                break;
+            case 8:
+                s = sumar(A, n);
+                cout << "La suma de los elementos del vector es: " << s << endl;
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Ingrese un número válido" << endl;
+                break;
+        }
+    } while (opcion != 0);
+}
+
+void cargar(int vec[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << "vec[" << i << "] = ";
+        cin >> vec[i];
+    }
+}
+
+void mostrar(int vec[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << "vec[" << i << "] = " << vec[i] << endl;
+    }
+}
+
+void burbuja(int vec[], int n) {
+    int aux;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (vec[j] < vec[i]) {
+                aux = vec[j];
+                vec[j] = vec[i];
+                vec[i] = aux;
+            }
+        }
+    }
+}
+
+int sumar(int vec[], int n) {
+    int suma = 0;
+    for (int i = 0; i < n; i++) {
+        suma += vec[i];
+    }
+    return suma;
+}
+
+void unir(int vec[], int n, int vec1[], int m, int vec2[], int &tam) {
+    int k = 0;
+    for (int i = 0; i < n; i++, k++) {
+        vec2[k] = vec[i];
+    }
+    for (int i = 0; i < m; i++, k++) {
+        vec2[k] = vec1[i];
+    }
+    tam = n + m;
+}
+
+float promedio(int vec[], int n) {
+    float promedio;
+    int suma = sumar(vec, n);
+    promedio=suma/n;
+    return promedio ;
+}
