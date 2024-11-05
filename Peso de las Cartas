@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    float carta; 
+    cout<<"Ingrese el peso de la carta: ";
+    cin>>carta;
+     if(carta>0 && carta<50){
+         cout<<"La carta cuesta 1.50 bs";
+     }
+     else{
+         if(carta>50 && carta<=100){
+             cout<<"La carta pesa 4.00 bs";
+         }
+         else{
+             if(carta>100 && carta<=200){
+                 cout<<"La carta cuesta 6.00 bs";
+             }
+             else{
+                 if(carta>200 && carta<=350){
+                     cout<<"La carta cuesta 10.50 bs";
+                 }
+                 else{
+                     if(carta>350 && carta<=500){
+                         cout<<"La carta cuesta 15.00 bs";
+                     }
+                     else{
+                         cout<<"No se puede enviar como carta, excede el peso admitido";
+                     }
+                 }
+             }
+         }
+     }
+    return 0;
+}
