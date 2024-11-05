@@ -1,0 +1,96 @@
+//Alexander Maldonado Alba
+#include <iostream>
+using namespace std;
+
+int main()
+{ 
+    int opcion;
+    float base,altura,area;
+    float carta;
+    int contador=1,suma=0,n;
+    
+    do{
+        // Las opciones del menu que le van a ofertar al usuario
+        cout<< "Menu"<<endl;
+        cout<< "-------"<<endl;
+        cout<< "1 Area de un rectangulo. "<<endl;
+        cout<< "2. Costo por peso de una carta "<<endl;
+        cout<< "3. Suma numeros impares "<<endl;
+        cout<< "0. Salir"<<endl;
+        
+        
+        cout<<"Ingrese la opcion que desea: ";
+        cin>> opcion;
+        //Se realizan intrucciones dependiendo de la variable opcion
+        
+        switch(opcion){
+            case 1:
+                
+                cout<<"Ingresa la base: ";
+                cin>> base;
+                cout<<"Ingresa la altura: ";
+                cin>> altura;
+                area= base*altura;
+                cout<<"El area del rectangulo es: "<<area<<endl;//colocar las instruccciones a la primera opcion 
+                break;
+            case 2:
+                 
+                cout<<"Ingrese el peso de la carta: ";
+                cin>>carta;
+                 if(carta>0 && carta<50){
+                     cout<<"La carta cuesta 1.50 bs";
+                 }
+                 else{
+                     if(carta>50 && carta<=100){
+                         cout<<"La carta pesa 4.00 bs";
+                     }
+                     else{
+                         if(carta>100 && carta<=200){
+                             cout<<"La carta cuesta 6.00 bs";
+                         }
+                         else{
+                             if(carta>200 && carta<=350){
+                                 cout<<"La carta cuesta 10.50 bs";
+                             }
+                             else{
+                                 if(carta>350 && carta<=500){
+                                     cout<<"La carta cuesta 15.00 bs";
+                                 }
+                                 else{
+                                     cout<<"No se puede enviar como carta, excede el peso admitido";
+                                 }
+                             }
+                         }
+                     }
+                 }//colocar las instruccciones a la primera opcion 
+                break;
+            case 3:
+                
+                cout<<"Se realizara la suma de numeros enteros impares comprendidos entre 1 y N"<<endl;
+                cout<<"Ingrese el valor de N(natural mayor a 1): ";
+                cin>>n;
+                
+                if(n>1){
+                    while(contador<=n){
+                        
+                        suma=suma+contador,
+                        contador=contador+2;
+                    }
+                    cout<<"La suma de los numeros impares es de: "<<suma<<endl;
+                }
+                 else
+                 cout<<"Ingrese valores validos";
+                //colocar las instruccciones a la primera opcion 
+                break;
+            case 0:cout<<"Saliendo del programa"<<endl; //colocar las instruccciones a la primera opcion 
+                break;
+            
+            default: cout<< "Opcion invalida"<<endl; 
+             break;
+            
+        }
+        
+        
+    }while( opcion !=0);
+    return 0;
+}
