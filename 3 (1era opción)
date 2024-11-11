@@ -1,0 +1,29 @@
+//Alexander Maldonado Alba
+
+#include <iostream>
+
+using namespace std;
+
+double precioF(double c, double md);
+
+int main() {
+    double c, md, precio;
+    do {
+        cout << "Ingrese el costo del producto: " << endl;
+        cin >> c;
+    } while (c < 0);
+    do {
+        cout << "Ingrese el margen deseado: " << endl;
+        cin >> md;
+    } while ((md < 0) || (md > 101));
+
+    precio = precioF(c, md);
+    cout << "El precio final del producto es: " << precio << endl;
+
+    return 0;
+}
+
+double precioF(double c, double md) {
+    double precio= c * (1 + (md / 100));
+    return precio;
+}
