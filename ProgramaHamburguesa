@@ -1,0 +1,41 @@
+//Alexander Maldonado Alba
+#include <iostream>
+using namespace std; 
+
+int main()
+{
+    int hs=0, hq=0, pf=0, g=0; 
+    float total;
+    cout<<"Ingrese la cantidad de hamburguesas simples que fueron consumidas: "; 
+    cin>>hs; 
+    if (hs >= 0)
+    {
+        cout<<"Ingrese la cantidad de hamburguesas con queso que fueron consumidas: ";
+        cin>>hq; 
+        if (hq >= 0)
+        {
+            cout<<"Ingrese la cantidad de papas fritas que fueron consumidas: ";
+            cin>>pf;
+            if (pf >= 0)
+            {
+                cout<<"Ingrese la cantidad de gaseosas que fueron consumidas: ";
+                cin>>g;
+                if (g >= 0)
+                {
+                   cout<<"La cantidad total de consumo es: "<<hs<< " Hamburguesas Simples, "<<hq<<" Hamburguesas con Queso, "<<pf<<" Papas Fritas y "<<g<< " Gaseosas."<<endl;
+                   total=(3.00*hs+ 5.00*hq+ 2.00*pf+ 2.50*g);
+                   cout<<"La cantidad total a pagar es Bs.: "<<total;
+                }
+                else
+                cout<<"Error. Ingresar los datos de manera correcta nuevamente.";
+            }
+            else
+            cout<<"Error. Ingresar los datos de manera correcta nuevamente.";
+        }
+        else 
+        cout<<"Error. Ingresar los datos de manera correcta nuevamente.";
+    }
+    else 
+    cout<<"Error. Ingresar los datos de manera correcta nuevamente.";
+    return 0;
+}
