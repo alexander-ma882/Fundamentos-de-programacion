@@ -1,0 +1,29 @@
+//Alexander Maldonado Alba
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+double POTEN(float n, float y);
+
+int main()
+{
+	float x1, x2, pot;
+
+	cout << "Ingrese el primer numero: ";
+	cin >> x1;
+	cout << "Ingrese el segundo numero: ";
+	cin >> x2;
+	cout << "Ingrese la potencia de los numeros: ";
+	cin >> pot;
+
+	cout << "El primer numero es: " << endl << POTEN(x1, pot) << endl;
+	cout << "El segundo numero es: " << endl << POTEN(x2, pot);
+
+	return 0;
+}
+
+double POTEN(float n, float y) {
+	double p = pow(n, y);
+	return p;
+}
