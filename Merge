@@ -1,0 +1,90 @@
+//Alexander Maldonado Alba
+#include <iostream>
+#define MAX 100
+
+using namespace std;
+
+void cargar(int vec[], int n);
+void mostrar(int vec[], int n);
+void burbuja(int vec[], int vec2[], int n, int m);
+void merge(int vec[],int vec2[],int vec3[], int n, int m, int l);
+
+int main()
+{
+    int n, m, l, vec[MAX], vec2[MAX], vec3[MAX];
+    do{
+        cout<<"Ingrese el tamaño del primer vector: ";
+        cin>>n;
+    }while(n<1 || n>MAX);
+    cargar(vec,n);
+    
+
+    
+    do{
+        cout<<"Ingrese el tamaño del segundo vector: ";
+        cin>>m;
+    }while(m<1 || m>MAX);
+    cargar(vec2,m);
+    
+    l=m+n;
+    burbuja(vec, vec2, n, m);
+    merge(vec,vec2,vec3,n,m,l);
+    mostrar(vec3,l);
+    
+    return 0;
+}
+
+void cargar(int vec[], int n){
+    for(int i=0; i<n; i++){
+        cout<<"Ingresar el valor de vec["<<i<<"]: ";
+        cin>>vec[i];
+    }
+}
+
+void burbuja(int vec[], int vec2[], int n, int m) {
+    int aux, aux2;
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j <n; j++) {
+            if (vec[j] < vec[i]) {
+                aux = vec[i];
+                vec[i] = vec[j];
+                vec[j] = aux;
+            }
+        }
+    }
+    for (int x = 0; x < m; x++) {
+        for (int y = x + 1; y < m; y++) {
+            if (vec2[y] < vec2[x]) {
+                aux2 = vec2[x];
+                vec2[x] = vec2[y];
+                vec2[y] = aux2;
+            }
+        }
+    }
+
+    
+}
+void mostrar(int vec3[], int l){
+    cout<<"El vector unido es: "<<endl;
+    for(int i=0; i<l; i++){
+        cout<<"vec["<<i<<"]="<<vec3[i]<<endl;
+    }
+    
+}
+
+void merge(int vec[],int vec2[],int vec3[], int n, int m, int l){
+    int i=0, j=0;
+    
+    for(int k=0; k<l; k++)
+        if(vec[i]>vec2[j] && j<m){
+            vec3[k]=vec2[j];
+            j++;
+        }
+        else{
+            if(i<n){
+                vec3[k]=vec[i];
+                i++;
+            }
+            
+        }
+}
